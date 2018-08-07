@@ -1,0 +1,89 @@
+.main {
+
+}
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+#main {
+  height: 500px;
+  width: 500px;
+  margin-top: 200px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#main p {
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: rgb(61,207,210);
+}
+.big-circle1, .small-circle1, .big-circle2{
+  background-color: rgb(61,207,210);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.big-circle2 {
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.big-circle1 {
+  width: 250px;
+  height: 250px;
+  margin-top: -15px;
+  border-radius: 250px;
+}
+.small-circle1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+
+}
+.small-circle2, .big-circle3 {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: white;
+}
+.big-circle2 {
+  width: 190px;
+  height: 190px;
+  border-radius: 190px;
+  background-color: white;
+}
+.big-circle3, .rect {
+  background-color: rgb(61,207,210);
+}
+
+@keyframes rotate {
+  from {
+    transform-origin: top center;
+    transform: rotate(0deg);
+  }
+  to {
+    transform-origin: top center;
+    transform: rotate(360deg);
+  }
+}
+.rect {
+  /* transition: transform 5s;
+  transition-timing-function: linear; */
+  animation-name: rotate;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  width: 7px;
+  height: 75px;
+}
+.big-circle1:hover .rect {
+  animation-play-state: paused;
+}

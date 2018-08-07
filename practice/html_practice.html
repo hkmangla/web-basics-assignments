@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+  </head>
+  <body>
+    <header>
+      <h1>Create an Account</h1>
+      <form class="form" action="#" method="post">
+        <label for="email">Email:</label>
+        <br />
+        <input type="text" name="email">
+        <br />
+        <br />
+        <label for="password">Password:</label>
+        <br />
+        <input type="password" name="password">
+        <br />
+        <br />
+        <label for="age">Age:</label>
+        <br />
+        <select name="age">
+          <option value="no-selection">Select Age</option>
+          <option value="under-18">Under 18</option>
+          <option value="bw18-30">18-30</option>
+          <option value="bw31-45">31-45</option>
+          <option value="morethan-46">46+</option>
+        </select>
+        <br />
+        <br />
+        <label for="intro">Tell us a little about yourself:</label>
+        <br />
+        <textarea name="intro" rows="8" cols="80"></textarea>
+        <br />
+        <p>
+          <input type="checkbox" name="terms-agreement" value="term">
+          I agree to the <a href="#">terms of services</a>
+        <p>
+        <input type="submit" name="button" value="Sign up">
+      </form>
+    </header>
+  </body>
+</html>

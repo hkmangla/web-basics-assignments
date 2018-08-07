@@ -1,0 +1,128 @@
+.main {
+  background-color: rgb(255, 247, 216);
+}
+#main-article, #main-aside{
+  /* border: 2px solid black; */
+  display: inline-block;
+  vertical-align: top;
+  text-align: justify;
+}
+#main-article {
+  width: 960px;
+  /* height: 450px; */
+  padding: 10px;
+}
+aside {
+  /* display: inline-block; */
+  border-radius: 10px;
+  box-shadow: 5px 5px 8px grey;
+  float: right;
+  background-color: grey;
+  width: 250px;
+  position: relative;
+  margin-top: 35px;
+  /* top: -170px; */
+}
+aside nav {
+  margin: 10px;
+}
+aside p,aside h2 {
+  margin: 10px;
+  color: white;
+}
+.aside-img {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  border: 2px solid black;
+}
+#header h1 {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+#header h2 {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+#header a {
+  font-size: 1.8em;
+  text-decoration: none;
+  color: black;
+}
+section {
+  overflow: auto;
+  /* border: 2px solid black; */
+}
+#menu {
+  padding: 0px;
+  /* border: 2px solid black; */
+  margin-top: 65px;
+  /* margin-bottom: 10px; */
+  float: right;
+}
+#menu ul {
+  margin: 0px;
+}
+#menu ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.contact {
+  /* border: 2px solid black; */
+  display: inline-block;
+  vertical-align: top;
+  /* margin-right: 20px; */
+  width: 32.75%;
+  margin-right: 0px;
+  /* margin: auto; */
+}
+.contact ul {
+  display: inline-block;
+  padding-left: 15px;
+  margin-top: 0px;
+  margin-right: 20px;
+  list-style-image: url('tp_images_fonts/images/external_link.png');
+  /* border: 2px solid green; */
+}
+.contact ul a {
+  text-decoration: none;
+  color: rgb(118,0,1);
+}
+
+.button {
+  display: inline-block;
+  color: white;
+  float: right;
+  border: 2px solid black;
+}
+#home-page {
+  height: 200px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 4px 4px #1c1a19;
+  background: url('tp_images_fonts/images/sanfrancisco.jpg');
+  shadow
+}
+.gallery {
+  position: absolute;
+  bottom: 0;
+  width: 99.5%;
+  color: white;
+  vertical-align: bottom;
+  line-height: 33px;
+  background-color: rgb(24,24,24);
+  padding-top: 15px;
+  padding-left: 5px;
+  border-radius: 0px 0px 5px 5px;
+  /* border: 2px solid green; */
+  /* vertical-align: bottom; */
+}
+
+.button {
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 10px;
+  background-color: rgb(150,20,20);
+  text-decoration: none;
+}

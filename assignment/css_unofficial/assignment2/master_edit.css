@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+.main{
+  background-color: rgb(255, 247, 216);
+}
+#menu ul li {
+  display: block;
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+#menu ul {
+  float: right;
+  width: 623px;
+  padding: 0px;
+  margin: 0px;
+  padding-bottom: 10px;
+}
+#menu a {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: black;
+  font-family: sans-serif;
+}
+#header h1 {
+  display: inline-block;
+}
+#header h2 {
+  padding: 0px;
+  margin: 0px;
+  padding-bottom: 10px;
+}
+.button {
+  background-color: rgb(150,20,20);
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  color: white;
+  float: right;
+  border-radius: 10px;
+}
+.gallery {
+  position: absolute;
+  width: 100%;
+  padding-left: 5px;
+  padding-top: 15px;
+  color: white;
+  bottom: 0;
+  background-color: rgb(0,0,0,0.75);
+}
+#home-page {
+  position: relative;
+  border: 1px solid black;
+  height: 200px;
+  background: url('tp_images_fonts/images/sanfrancisco.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+section {
+  overflow: auto;
+  /* position: relative; */
+}
+#main-article {
+  /* width: 70%; */
+  margin-right: 270px;
+  float: left;
+  padding-right: 20px;
+  text-align: justify;
+}
+#main-aside {
+  width: 270px;
+  margin-left: -270px;
+  /* position: absolute; */
+  float: left;
+  text-align: justify;
+  padding: 15px;
+  background-color: grey;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+#main-aside nav{
+  /* border: 1px solid red; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  /* padding: 0px 7px 0px 7px; */
+}
+#main-aside * {
+  color: white;
+}
+.aside-img {
+  display: block;
+  margin: auto;
+  padding: auto;
+}
+#main-aside h2 {
+  text-align: center;
+}
+.contact {
+  display: block;
+  float: left;
+  width: 33%;
+}
+.contact ul {
+  display: block;
+  width: 50%;
+  float: left;
+  padding: 0px;
+  margin: 0px;
+  list-style-image: url('tp_images_fonts/images/external_link.png')
+}
+
+.contact ul li a{
+  text-decoration: none;
+  color: rgb(118,0,1);
+}
+@media screen and (max-width: 800px) {
+  #menu ul{
+    width: 100%;
+  }
+  #menu ul li {
+    width: 100%;
+    background-color: green;
+    margin-top: 10px;
+  }
+  #menu ul li a {
+    color: white;
+  }
+  #header h2 {
+    text-align: center;
+  }
+  #main-article, #main-aside {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .contact {
+    width: 100%;
+  }
+  .contact > * {
+    text-align: center;
+  }
+}
