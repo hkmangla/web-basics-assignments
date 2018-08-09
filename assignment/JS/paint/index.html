@@ -8,22 +8,26 @@
   <body>
     <h1>Paint</h1>
     <canvas id="canvas" width="700" height="400">Canvas not supported!</canvas>
-    <table>
-      <caption>Colors</caption>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-    <br /><button id="button">Clear</button>
+    <div id="pane">
+      <p>Colors</p>
+      <table id='colorTable'>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p>Eraser</p>
+      <div id="eraser"></div>
+    </div>
+    <br /><button id="clearCanvas">Clear</button>
     <script src="script.js"></script>
   </body>
 </html>

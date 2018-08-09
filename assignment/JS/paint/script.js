@@ -1,10 +1,11 @@
 colors = ['red', 'blue', 'green', 'black', 'grey', 'yellow'];
-function giveColors() {
+function setColors() {
   let idx = 0;
   let table = document.getElementsByTagName('TABLE')[0];
   for (let row of table.rows) {
     for (let cell of row.cells) {
       cell.style.backgroundColor = colors[idx];
+      cell.title = colors[idx];
       cell.id = '#' + idx;
       idx ++;
     }
@@ -12,41 +13,64 @@ function giveColors() {
   return table;
 }
 function paint() {
-  let table = giveColors();
-  let X = canvas.getBoundingClientRect().left;
-  let Y = canvas.getBoundingClientRect().top;
+  let table = setColors();
+  let offsetX = canvas.getBoundingClientRect().left;
+  let offsetY = canvas.getBoundingClientRect().top;
   let paint = canvas.getContext("2d");
   let prevX = -1, prevY = -1;
   paint.strokeStyle = '#FF0000';
   paint.fillStyle = "#FF0000";
-  function draw(e) {
+  // document.body.style.cursor = "url('paint.png'), auto";
+  function draw(e, lineWidth, cursor) {
+    let currX = e.clientX, currY = e.clientY;
     if(prevX == -1 && prevY == -1) {
-      paint.fillRect(e.clientX - X, e.clientY - Y, 4, 4);
-      prevX = e.clientX - X;
-      prevY = e.clientY - Y;
+      paint.fillRect(currX - offsetX, currY - offsetY, lineWidth, lineWidth);
+      prevX = currX - offsetX;
+      prevY = currY - offsetY;
     } else {
+      paint.beginPath();
       paint.moveTo(prevX, prevY);
-      paint.lineTo(e.clientX - X, e.clientY - Y);
+      paint.lineTo(currX - offsetX, currY - offsetY);
       paint.stroke();
-      paint.lineWidth = 2;
-      prevX = e.clientX - X;
-      prevY = e.clientY - Y;
+      paint.lineWidth = lineWidth;
+      prevX = currX - offsetX;
+      prevY = currY - offsetY;
 
     }
   }
-  document.onmousedown = function() {
-    canvas.addEventListener('mousemove', draw);
+  function drawWithFill(e) {
+    draw(e, 2);
+  }
+  document.onmousedown = function(e) {
+    e.preventDefault();
+    if(e.target.tagName === 'CANVAS') {
+      canvas.addEventListener('mousemove', drawWithFill);
+    }
+    if(e.target.id === 'eraser') {
+      document.addEventListener('mousemove', erase);
+    }
   }
   document.onmouseup = function() {
-    canvas.removeEventListener('mousemove', draw);
+    eraser.style.position = 'static';
+    document.removeEventListener('mousemove', erase);
+    canvas.removeEventListener('mousemove', drawWithFill);
+    prevX = -1, prevY = -1;
   }
-  button.onclick = function() {
+  clearCanvas.onclick = function() {
     paint.clearRect(0, 0, canvas.width, canvas.height);
   }
-  table.onclick = function(e) {
-    paint.fillStyle = e.target.id[1];
-    paint.strokeStyle = e.target.id[1];
+  colorTable.onclick = function(e) {
+    paint.fillStyle = colors[+e.target.id[1]];
+    paint.strokeStyle = colors[+e.target.id[1]];
+  }
+  function erase(e) {
+    eraser.style.position = 'absolute';
+    eraser.style.zIndex = 100;
+    eraser.style.left = e.clientX - eraser.clientWidth + 'px';
+    eraser.style.top = e.clientY - eraser.clientHeight + 'px';
+    paint.fillStyle = "#FFFFFF";
+    paint.strokeStyle = "#FFFFFF";
+    draw(e,30);
   }
 }
-
 paint();
