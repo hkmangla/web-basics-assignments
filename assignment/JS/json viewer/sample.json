@@ -1,0 +1,110 @@
+{
+  "attributes": {
+    "@id": "4",
+    "@compstack": "6",
+    "@desc": "TaskView Clicked_Item3 Starts",
+    "@txt": "3",
+    "comps": {
+      "comp": [
+        {
+          "@id": "3",
+          "@mode": "new",
+          "sizeandpos": {
+            "attr": [
+              {
+                "@name": "height",
+                "@value": "40"
+              },
+              {
+                "@name": "width",
+                "@value": "*"
+              },
+              {
+                "@name": "bottom",
+                "@value": "0"
+              }
+            ]
+          },
+          "initialattrs": {
+            "attr": [
+              {
+                "@name": "TB_ADD_TOOLBAR",
+                "@value": "[\"Desktop\"]"
+              },
+              {
+                "@name": "TB_PIN_APP",
+                "@value": "[\"Control Panel\",\"Windows Journal\",\"Alarms & Clock\"]"
+              }
+            ]
+          }
+        },
+        {
+          "@id": "2",
+          "@mode": "remove"
+        },
+        {
+          "@id": "4",
+          "@mode": "remove"
+        },
+        {
+          "@id": "6",
+          "@mode": "new",
+          "sizeandpos": {
+            "attr": [
+              {
+                "@name": "left",
+                "@value": "0"
+              },
+              {
+                "@name": "top",
+                "@value": "0"
+              },
+              {
+                "@name": "width",
+                "@value": "*"
+              }
+            ]
+          },
+          "initialattrs": {
+            "attr": [
+              {
+                "@name": "DESKTOPS_CONFIG_JSON",
+                "@value": "XMLs/TaskXmls/win10/w10/01/01.07.t1/Assets/json/DesktopConfig1.json"
+              },
+              {
+                "@name": "THEME_COLOR",
+                "@value": "#0162ba"
+              },
+              {
+                "@name": "SELECTED_APPLICATION",
+                "@value": "0"
+              }
+            ]
+          },
+          "finalattrs": {
+            "attr": [
+              {
+                "@name": "SELECTED_APPLICATION",
+                "@value": "1"
+              },
+              {
+                "@name": "SELECTED_DESKTOP",
+                "@value": "0"
+              }
+            ]
+          },
+          "events": {
+            "event": {
+              "@id": "7",
+              "@followup": "5"
+            }
+          }
+        }
+      ]
+    },
+    "Node Type": "State",
+    "Node Subtype": "Step3"
+  },
+  "id": "4",
+  "label": "State 4"
+}

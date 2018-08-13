@@ -20,8 +20,7 @@ function paint() {
   let prevX = -1, prevY = -1;
   paint.strokeStyle = '#FF0000';
   paint.fillStyle = "#FF0000";
-  // document.body.style.cursor = "url('paint.png'), auto";
-  function draw(e, lineWidth, cursor) {
+  function draw(e, lineWidth) {
     let currX = e.clientX, currY = e.clientY;
     if(prevX == -1 && prevY == -1) {
       paint.fillRect(currX - offsetX, currY - offsetY, lineWidth, lineWidth);

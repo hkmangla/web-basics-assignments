@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+.box {
+    padding: 5px;
+    margin: 5px;
+    height: 28px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.key {
+    background-color: lightsteelblue;
+    width: 120px;
+    display: inline-block;
+    height: 100%;
+    padding: 5px;
+}
+
+.value {
+    display: inline-block;
+    /*width: 50%;*/
+    padding: 5px;
+    /*margin: 0;*/
+    height: 100%;
+    width: 500px;
+    margin-left: 120px;
+    margin-top: -28px;
+    vertical-align: top;
+}
+
+.key-value {
+    background-color: white;
+    padding: 0;
+    overflow: hidden;
+}
+.object-header {
+    background-color: white;
+}
+
+.object-container {
+    left: 30px;
+    padding: 0px;
+    margin-left: 20px;
+}
+
+.container {
+    width: 400px;
+    /*background-color: #4B5D67;*/
+}
+
+@keyframes move {
+    to {
+       margin-left: -200px;
+    }
+}
