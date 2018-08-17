@@ -1,0 +1,61 @@
+body, html, .wrapper {
+    height: 100%;
+    margin: 0;
+}
+.wrapper {
+    background-color: rgb(20,20,20);
+    opacity: 0.7;
+}
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -150px;
+    padding: 25px;
+    background-color: rgb(230, 230, 230);
+    border: 10px solid grey;
+}
+
+.loader-box {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 15px solid lightseagreen;
+    margin: auto;
+}
+
+.loader {
+    font-size: 45px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+    color: lightseagreen;
+    line-height: 200px;
+}
+
+input {
+    padding: 8px;
+    margin: 5px 0px;
+}
+.input-container {
+    margin-left: 20px;
+}
+
+.input-container p {
+    font-weight: bolder;
+}
+.run-button {
+    padding: 8px 25px;
+    margin-left: 30px;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+}
+.error {
+    color: red;
+}
