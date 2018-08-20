@@ -1,0 +1,47 @@
+.circle .fill, .radial-progress {
+    width: 120px;
+    height: 120px;
+}
+
+.radial-progress {
+    border-radius: 50%;
+    background-color: grey;
+}
+
+.fill {
+    background-color: #97a71d;
+    position: absolute;
+    border-radius: 50%;
+}
+.mask.left .fill{
+    clip: rect(0px, 60px, 120px, 0px);
+    transition: transform 2s linear;
+}
+.circle .mask {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.mask.left {
+    clip: rect(0px, 120px, 120px, 60px);
+}
+
+.mask.right {
+    clip: rect(0px, 60px, 120px, 0px);
+}
+.mask.right .fill {
+    clip: rect(0px, 120px, 120px, 60px);
+    transition: transform 2s 2s linear;
+}
+
+.inset {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 23px;
+    left: 23px;
+    border-radius: 50%;
+    background-color: white;
+}

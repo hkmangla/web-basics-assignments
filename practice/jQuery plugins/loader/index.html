@@ -10,6 +10,14 @@
 <body>
     <div class="wrapper">
         <div class="container">
+            <div class="radial-progress">
+                <div class="mask left">
+                    <div class="fill"></div>
+                </div>
+                <div class="mask right">
+                    <div class="fill"></div>
+                </div>
+            </div>
             <div class="loader-box">
                 <p class="loader"><span class="count-value">0</span>%</p>
             </div>
@@ -21,10 +29,9 @@
         <input type="text" name="load-time" placeholder="Load time in seconds">
         <button class="run-button">Run</button>
         <div class="error">
-            Invalid Load Time!.
+            Invalid Load Time!
         </div>
     </div>
-
 
     <!--<div class="message">Wait for previous load to complete!</div>-->
     <script src="main.js"></script>

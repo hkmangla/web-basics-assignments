@@ -4,14 +4,8 @@ $(document).ready(function () {
     $('.run-button').click(function () {
         let loadTime = +$('input').val();
         console.log(loadTime);
-        if(isNaN(loadTime) || loadTime == 0) {
-            $('.error').show();
-            return;
-        } else {
-            $('.error').hide();
-            $('.wrapper').show();
+        console.log("T0: " + performance.now());
+        $('.wrapper').showProgress(loadTime*1000);
 
-        }
-        $('.count-value').showProgress(loadTime*1000);
     });
 });
