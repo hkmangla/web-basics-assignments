@@ -3,49 +3,6 @@ body, html {
     margin: 0;
     overflow: auto;
 }
-.wrapper {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(20, 20, 20, 0.5);
-
-}
-.wrapper * {
-    user-select: none;
-}
-.container {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    box-sizing: border-box;
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    margin-top: -120px;
-    margin-left: -120px;
-    background-color: lightseagreen;
-}
-
-.loader-box {
-    position: absolute;
-    top: 20px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    left: 20px;
-    background-color: white;
-}
-
-.loader {
-    font-size: 45px;
-    font-weight: 800;
-    text-align: center;
-    margin: 0;
-    color: lightseagreen;
-    line-height: 200px;
-}
 
 input {
     padding: 8px;
@@ -64,43 +21,4 @@ input {
     border-radius: 5px;
     background-color: #4caf50;
     color: white;
-}
-.error {
-    color: red;
-}
-
-.radial-progress {
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    background-color: grey;
-}
-
-.fill {
-    width: 240px;
-    height: 240px;
-    background-color: lightseagreen;
-    position: absolute;
-    border-radius: 50%;
-}
-.mask.left .fill{
-    clip: rect(0px, 120px, 240px, 0px);
-}
-
-.mask.right .fill {
-    clip: rect(0px, 240px, 240px, 120px);
-}
-.mask {
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    position: absolute;
-}
-
-.mask.left {
-    clip: rect(0px, 240px, 240px, 120px);
-}
-
-.mask.right {
-    clip: rect(0px, 120px, 240px, 0px);
 }
