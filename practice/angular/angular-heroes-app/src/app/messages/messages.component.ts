@@ -8,6 +8,7 @@ import {MessageService} from '../message.service';
 })
 export class MessagesComponent implements OnInit {
 
+  fontSizePx = 18;
   constructor(public messageService: MessageService) { }
 
   ngOnInit() {

@@ -13,6 +13,11 @@ export class HeroDetailComponent implements OnInit {
 
   @Input() hero: Hero;
 
+  delete(): void {
+    this.heroService.deleteHero(this.hero);
+    this.hero = undefined;
+  }
+
   constructor(
     private route: ActivatedRoute,
     private location: Location,

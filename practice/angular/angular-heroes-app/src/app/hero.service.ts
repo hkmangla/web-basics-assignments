@@ -18,5 +18,11 @@ export class HeroService {
     this.messageService.add('HeroService: fetched Hero');
     return of(Heroes.find(hero => hero.id === id));
   }
+
+  deleteHero(hero: Hero): void {
+    this.messageService.add('HeroService: Hero deleted!')
+    Heroes.splice(Heroes.indexOf(hero), 1);
+  }
+
   constructor(private messageService: MessageService) { }
 }
