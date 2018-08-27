@@ -1,0 +1,30 @@
+.status-bar img {
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+}
+
+.status-bar {
+  height: 20px;
+  line-height: 20px;
+}
+
+.description {
+  color: dodgerblue;
+  font-weight: bold;
+}
+
+.question-box {
+  margin-left: 20px;
+}
+
+button {
+  background-color: darkslateblue;
+  padding: 10px 15px;
+  color: white;
+
+}
+
+a {
+  color: white;
+}

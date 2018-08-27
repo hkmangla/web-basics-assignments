@@ -1,0 +1,15 @@
+<h2>Categories</h2>
+<div class="container" *ngFor="let category of categories">
+  <div class="icon">
+    <img [src]="category.iconUrl" [alt]="category.title">
+  </div>
+
+  <div class="category-body">
+    <h3><a routerLink="/categories/{{category.title | lowercase}}">
+        {{category.title | capitalize}}</a></h3>
+    <p>{{category.description}}</p>
+    <ul class="tags">
+      <li *ngFor="let tag of category.tags">{{tag}}</li>
+    </ul>
+  </div>
+</div>

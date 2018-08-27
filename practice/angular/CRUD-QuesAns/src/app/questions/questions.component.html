@@ -1,0 +1,18 @@
+<h2> <a routerLink="/categories">Categories</a>
+      / {{category | capitalize}}</h2>
+<div>
+  <h3>Learn About: {{category | capitalize}}</h3>
+  <button>New Question</button>
+  <div class="question-box" *ngFor="let question of questions; let i=index">
+    <div *ngIf="question.exists">
+      <p class="description">{{question.description}}</p>
+      <p class="status-bar">
+         <img (click)="incLikes(i+1)" src="../../assets/like.png"> {{question.likes}}&nbsp;&nbsp;&nbsp;
+         <img (click)="incDislikes(i+1)" class="dislike" src="../../assets/dislike.png"> {{question.dislikes}}&nbsp;&nbsp;&nbsp;
+         <img (click)="delete(i+1)" src="../../assets/delete.png">&nbsp;&nbsp;&nbsp; {{question.answers.length}} answers</p>
+      <hr>
+    </div>
+  </div>
+
+  <button (click)="goBack()">Back</button>
+</div>
