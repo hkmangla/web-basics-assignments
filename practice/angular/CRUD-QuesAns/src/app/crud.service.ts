@@ -44,5 +44,19 @@ export class CrudService {
     })[0].exists = false;
   }
 
+  updateQuestion(categoryId, questionId, questionText): void {
+
+    const question: Question = {
+      id: questionId,
+      categoryId: categoryId,
+      description: questionText,
+      likes: 0,
+      dislikes: 0,
+      answers: [],
+      exists: true
+    };
+
+    QUESTIONS.push(question);
+  }
   constructor() { }
 }
