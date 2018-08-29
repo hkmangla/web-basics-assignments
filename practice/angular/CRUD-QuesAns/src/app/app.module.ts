@@ -11,6 +11,7 @@ import { NewQuestionComponent } from './new-question/new-question.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import { ConfirmPromptComponent } from './confirm-prompt/confirm-prompt.component';
+import { NewCategoryComponent } from './new-category/new-category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { ConfirmPromptComponent } from './confirm-prompt/confirm-prompt.componen
     QuestionsComponent,
     CapitalizePipe,
     NewQuestionComponent,
-    ConfirmPromptComponent
+    ConfirmPromptComponent,
+    NewCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { ConfirmPromptComponent } from './confirm-prompt/confirm-prompt.componen
   bootstrap: [AppComponent],
   entryComponents: [
     NewQuestionComponent,
-    ConfirmPromptComponent
+    ConfirmPromptComponent,
+    NewCategoryComponent
   ]
 })
 export class AppModule { }

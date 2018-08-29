@@ -5,7 +5,6 @@ import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {MatDialog, MatDialogConfig} from '@angular/material';
 import {NewQuestionComponent} from '../new-question/new-question.component';
-import {QUESTIONS} from '../mock-questions';
 import {ConfirmPromptComponent} from '../confirm-prompt/confirm-prompt.component';
 
 @Component({
@@ -69,6 +68,10 @@ export class QuestionsComponent implements OnInit {
 
   updateQuestion(): void {
     console.log(this.newQuestionText);
+    if (this.newQuestionText === undefined ||
+        this.newQuestionText.trim() === '') {
+      return;
+    }
     this.crudService.updateQuestion(this.getCategoryId(),
                                     this.questions.length + 1,
                                     this.newQuestionText);

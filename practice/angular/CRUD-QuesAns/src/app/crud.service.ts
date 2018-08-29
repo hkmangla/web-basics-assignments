@@ -58,5 +58,9 @@ export class CrudService {
 
     QUESTIONS.push(question);
   }
+
+  updateCategory(category): void {
+    CATEGORIES.push(category);
+  }
   constructor() { }
 }
