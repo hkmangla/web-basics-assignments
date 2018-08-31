@@ -12,6 +12,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import { ConfirmPromptComponent } from './confirm-prompt/confirm-prompt.component';
 import { NewCategoryComponent } from './new-category/new-category.component';
+import { AnswersComponent } from './answers/answers.component';
+import { NewAnswerComponent } from './new-answer/new-answer.component';
+import { EditAnswerComponent } from './edit-answer/edit-answer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,10 @@ import { NewCategoryComponent } from './new-category/new-category.component';
     CapitalizePipe,
     NewQuestionComponent,
     ConfirmPromptComponent,
-    NewCategoryComponent
+    NewCategoryComponent,
+    AnswersComponent,
+    NewAnswerComponent,
+    EditAnswerComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,9 @@ import { NewCategoryComponent } from './new-category/new-category.component';
   entryComponents: [
     NewQuestionComponent,
     ConfirmPromptComponent,
-    NewCategoryComponent
+    NewCategoryComponent,
+    NewAnswerComponent,
+    EditAnswerComponent
   ]
 })
 export class AppModule { }

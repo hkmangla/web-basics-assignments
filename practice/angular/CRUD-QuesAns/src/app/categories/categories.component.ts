@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Category } from '../category';
-import { CrudService } from '../crud.service';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Category} from '../category';
+import {CrudService} from '../crud.service';
 import {MatDialog, MatDialogConfig} from '@angular/material';
 import {NewCategoryComponent} from '../new-category/new-category.component';
 
@@ -15,8 +15,8 @@ export class CategoriesComponent implements OnInit {
 
   openDialog(): void {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.height = '400px';
-    dialogConfig.width = '360px';
+    dialogConfig.autoFocus = true;
+    dialogConfig.hasBackdrop = true;
 
     const dialogRef = this.matDialog.open(NewCategoryComponent, dialogConfig);
 

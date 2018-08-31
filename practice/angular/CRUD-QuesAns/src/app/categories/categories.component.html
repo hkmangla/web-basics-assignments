@@ -3,11 +3,12 @@
 
   <div class="container">
     <div class="icon">
-      <img [src]="category.iconUrl" [alt]="category.title">
+      <img [src]="category.iconUrl" [alt]="category.title"
+            onerror="src='../../assets/default.png';">
     </div>
 
     <div class="category-body">
-      <h3><a routerLink="/categories/{{category.title | lowercase}}">
+      <h3><a routerLink="{{category.title | lowercase}}">
           {{category.title | capitalize}}</a></h3>
       <p>{{category.description}}</p>
       <ul class="tags">

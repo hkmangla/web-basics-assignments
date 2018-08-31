@@ -1,0 +1,17 @@
+a {
+  color: white;
+}
+.status-bar img {
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+}
+
+.status-bar {
+  height: 20px;
+  line-height: 20px;
+}
+
+.answer-box {
+  margin-left: 20px;
+}

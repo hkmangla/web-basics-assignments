@@ -5,11 +5,16 @@
   <button (click)="openDialog()">New Question</button>
   <div class="question-box" *ngFor="let question of questions; let i=index">
     <div *ngIf="question.exists">
-      <p class="description">{{question.description}}</p>
+      <a routerLink="{{question.id}}">
+        <p class="description">{{question.description}}</p>
+      </a>
       <p class="status-bar">
-         <img (click)="incLikes(i+1)" src="../../assets/like.png"> {{question.likes}}&nbsp;&nbsp;&nbsp;
-         <img (click)="incDislikes(i+1)" class="dislike" src="../../assets/dislike.png"> {{question.dislikes}}&nbsp;&nbsp;&nbsp;
-         <img (click)="openPromptDialog(i+1)" src="../../assets/delete.png">&nbsp;&nbsp;&nbsp; {{question.answers.length}} answers</p>
+         <img (click)="incLikes(i+1)" src="../../assets/like.png"
+              title="Like"> {{question.likes}}&nbsp;&nbsp;&nbsp;
+         <img (click)="incDislikes(i+1)" class="dislike"
+              src="../../assets/dislike.png" title="Dislike"> {{question.dislikes}}&nbsp;&nbsp;&nbsp;
+         <img (click)="openPromptDialog(i+1)" src="../../assets/delete.png"
+              title="Delete">&nbsp;&nbsp;&nbsp; {{question.answers.length}} answers</p>
       <hr>
     </div>
   </div>
