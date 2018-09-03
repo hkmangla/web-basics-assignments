@@ -8,13 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { CapitalizePipe } from './capitalize.pipe';
 import { MatDialogModule } from '@angular/material';
 import { NewQuestionComponent } from './new-question/new-question.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { ConfirmPromptComponent } from './confirm-prompt/confirm-prompt.component';
 import { NewCategoryComponent } from './new-category/new-category.component';
 import { AnswersComponent } from './answers/answers.component';
 import { NewAnswerComponent } from './new-answer/new-answer.component';
 import { EditAnswerComponent } from './edit-answer/edit-answer.component';
+import { ForbiddenNamesDirective } from './forbidden-names.directive';
+import { SpaceValidatorDirective } from './space-validator.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { EditAnswerComponent } from './edit-answer/edit-answer.component';
     NewCategoryComponent,
     AnswersComponent,
     NewAnswerComponent,
-    EditAnswerComponent
+    EditAnswerComponent,
+    ForbiddenNamesDirective,
+    SpaceValidatorDirective
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,7 @@ export const CATEGORIES: Category[] = [
 
   {
     id: 2,
-    title: 'angular cli',
+    title: 'angular-cli',
     iconUrl: '../assets/category_2.png',
     description: 'Angular CLI is a command line interface to scaffold' +
                  ' and build angular apps using nodejs style modules.',

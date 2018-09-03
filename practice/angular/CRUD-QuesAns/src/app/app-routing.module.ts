@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: 'categories/:category', component: QuestionsComponent},
   {path: 'categories', component: CategoriesComponent},
   {path: '', redirectTo: '/categories', pathMatch: 'full'},
-  {path: 'categories/:category/:questionID', component: AnswersComponent}
+  {path: 'categories/:category/questions/:questionID', component: AnswersComponent}
 ];
 @NgModule({
   exports: [

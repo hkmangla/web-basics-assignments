@@ -3,14 +3,28 @@
   <form (keydown.enter)="$event.preventDefault()"
         (ngSubmit)="onSubmit()" #categoryForm="ngForm">
     <div class="form-group">
-      <label for="name">Category Name</label>
+      <label for="name">Category Name (dash-separated)</label>
       <input type="text" id="name" class="form-control"
              #name="ngModel" [(ngModel)]="category.title"
-             name="name" autocomplete="off" required>
-      <div class="alert alert-danger"
-           [hidden]="name.valid || name.pristine">
-           Name is Required!
+             name="name" autocomplete="off" required
+              appForbiddenNames="{{forbiddenNames}}"
+              appSpaceValidator>
+      <div *ngIf="name.invalid && (name.dirty || name.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="name?.errors.required">
+          Name is Required!
+        </div>
+
+        <div *ngIf="name?.errors.forbiddenName">
+          Category Exists!
+        </div>
+
+        <div *ngIf="name?.errors.forbiddenSpace">
+          Category name should not contain spaces!
+        </div>
       </div>
+
     </div>
 
     <div class="form-group">

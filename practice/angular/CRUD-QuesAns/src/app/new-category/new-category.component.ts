@@ -19,6 +19,7 @@ export class NewCategoryComponent implements OnInit {
       description: '',
       tags: []
   };
+  forbiddenNames: string;
 
   addTag(): void {
     this.newTag = this.newTag.trim();
@@ -43,7 +44,9 @@ export class NewCategoryComponent implements OnInit {
 
   constructor(private crudService: CrudService,
               private dialogRef: MatDialogRef<NewCategoryComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: Category) {
+              @Inject(MAT_DIALOG_DATA) public data: any) {
+    this.forbiddenNames = data;
+    console.log(this.forbiddenNames);
   }
 
   ngOnInit() { }

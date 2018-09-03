@@ -92,5 +92,14 @@ export class CrudService {
               obj.id === answerId;
     })[0];
   }
+
+  getCategoryTitles(): string {
+    let ret = '';
+    CATEGORIES.forEach( (elem) => {
+      ret += (elem.title + ' ');
+    });
+
+    return ret;
+  }
   constructor() { }
 }

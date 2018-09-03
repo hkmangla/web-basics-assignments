@@ -17,7 +17,7 @@ export class CategoriesComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.hasBackdrop = true;
-
+    dialogConfig.data = this.crudService.getCategoryTitles();
     const dialogRef = this.matDialog.open(NewCategoryComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(

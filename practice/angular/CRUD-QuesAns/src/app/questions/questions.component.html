@@ -5,7 +5,7 @@
   <button (click)="openDialog()">New Question</button>
   <div class="question-box" *ngFor="let question of questions; let i=index">
     <div *ngIf="question.exists">
-      <a routerLink="{{question.id}}">
+      <a routerLink="questions/{{question.id}}">
         <p class="description">{{question.description}}</p>
       </a>
       <p class="status-bar">
