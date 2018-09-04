@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
-h1 {
+.heading {
   background-color: darkslateblue;
-  padding: 15px;
+  height: 100px;
   font-size: 30px;
+  line-height: 100px;
   color: white;
-}
-a {
-  text-decoration: none;
+  text-align: center;
+  margin-top: 0px;
 }

@@ -1,6 +1,3 @@
-a {
-  color: white;
-}
 .status-bar img {
   width: 1em;
   height: 1em;
@@ -11,7 +8,6 @@ a {
   height: 20px;
   line-height: 20px;
 }
-
-.answer-box {
-  margin-left: 20px;
+.answer-section {
+  margin-top: 20px;
 }

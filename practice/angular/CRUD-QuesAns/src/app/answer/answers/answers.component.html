@@ -1,29 +1,31 @@
-<h2> <a routerLink="/categories">Categories</a> /
+<p> <a routerLink="/categories">Categories</a> >>
      <a routerLink="/categories/{{category | lowercase}}">
        {{category | capitalize}}
-     </a> /
-      {{question}}
-</h2>
+     </a> >> {{question}} </p>
 
-<div>
+<div class="container">
   <h3>{{question}}</h3>
-  <button (click)="openDialog()">New Answer</button>
-  <div class="answer-box" *ngFor="let answer of answers">
-    <div *ngIf="answer.exists">
-      <p class="text">{{answer.text}}</p>
-      <p class="status-bar">
-        <img src="../../assets/like.png"
-             title="Like"> {{answer.likes}}&nbsp;&nbsp;&nbsp;
-        <img class="dislike"
-             src="../../assets/dislike.png" title="Dislike"> {{answer.dislikes}}&nbsp;&nbsp;&nbsp;
-        <img src="../../assets/delete.png"
-             title="Delete">&nbsp;&nbsp;&nbsp;
-        <img (click)="openEditDialog(answer.text, answer.id)" src="../../assets/edit.png"
-             title="Edit">
-      </p>
-      <hr>
+  <button class="btn btn-primary"
+    (click)="openDialog()">New Answer</button>
+  <div class="answer-section">
+    <div class="well" *ngFor="let answer of answers">
+      <div *ngIf="answer.exists">
+        <p class="text">{{answer.text}}</p>
+        <p class="status-bar">
+          <img src="../../assets/like.png"
+               title="Like"> {{answer.likes}}&nbsp;&nbsp;&nbsp;
+          <img class="dislike"
+               src="../../assets/dislike.png" title="Dislike"> {{answer.dislikes}}&nbsp;&nbsp;&nbsp;
+          <img src="../../assets/delete.png"
+               title="Delete">&nbsp;&nbsp;&nbsp;
+          <img (click)="openEditDialog(answer.text, answer.id)" src="../../assets/edit.png"
+               title="Edit">
+        </p>
+        <hr>
+      </div>
     </div>
   </div>
 
-  <button (click)="goBack()">Back</button>
+  <button class="btn btn-primary"
+    (click)="goBack()">Back</button>
 </div>

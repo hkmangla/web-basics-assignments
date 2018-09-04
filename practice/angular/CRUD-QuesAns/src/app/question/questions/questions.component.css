@@ -13,12 +13,6 @@
   color: dodgerblue;
   font-weight: bold;
 }
-
-.question-box {
-  margin-left: 20px;
-}
-
-
-a {
-  color: white;
+.question-section {
+  margin-top: 20px;
 }
