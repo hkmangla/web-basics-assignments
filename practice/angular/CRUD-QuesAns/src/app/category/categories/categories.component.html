@@ -1,0 +1,30 @@
+<div class="container">
+
+  <a>Categories</a>
+  <div *ngFor="let category of categories">
+
+    <div class="well">
+
+      <div class="row">
+        <div class="col-sm-2">
+          <img [src]="category.iconUrl" [alt]="category.title"
+               onerror="src='../../assets/default.png';">
+        </div>
+
+        <div class="col-sm-10">
+          <h3><a routerLink="{{category.title | lowercase}}">
+            {{category.title | capitalize}}</a></h3>
+          <p>{{category.description}}</p>
+          <ul class="tags">
+            <li *ngFor="let tag of category.tags">{{tag}}</li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <button class="btn btn-primary btn-block btn-lg"
+            (click)="openDialog()">ADD New Category</button>
+
+</div>

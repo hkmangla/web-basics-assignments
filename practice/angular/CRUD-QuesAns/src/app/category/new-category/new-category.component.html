@@ -3,9 +3,11 @@
   <form (keydown.enter)="$event.preventDefault()"
         (ngSubmit)="onSubmit()" #categoryForm="ngForm">
     <div class="form-group">
-      <label for="name">Category Name (dash-separated)</label>
+      <label for="name">Category Name</label>
       <input type="text" id="name" class="form-control"
-             #name="ngModel" [(ngModel)]="category.title"
+             #name="ngModel"
+             [ngModel]="category.title | lowercase | capitalize"
+             (ngModelChange)="category.title=$event"
              name="name" autocomplete="off" required
               appForbiddenNames="{{forbiddenNames}}"
               appSpaceValidator>

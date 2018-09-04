@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {CrudService} from '../crud.service';
-import {ActivatedRoute} from '@angular/router';
-import {Location} from '@angular/common';
-import {Answer} from '../answer';
-import {MatDialog, MatDialogConfig} from '@angular/material';
-import {NewQuestionComponent} from '../new-question/new-question.component';
-import {NewAnswerComponent} from '../new-answer/new-answer.component';
-import {EditAnswerComponent} from '../edit-answer/edit-answer.component';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { Answer } from '../answer';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { NewAnswerComponent } from '../new-answer/new-answer.component';
+import { EditAnswerComponent } from '../edit-answer/edit-answer.component';
+import {AnswerService} from '../services/answer.service';
+import {QuestionService} from '../../question/services/question.service';
+import {CategoryService} from '../../category/services/category.service';
 
 @Component({
   selector: 'app-answers',
@@ -43,12 +44,12 @@ export class AnswersComponent implements OnInit {
       exists: true
     };
 
-    this.crudService.updateAnswers(answer);
+    this.answerService.updateAnswers(answer);
     this.getAnswers();
   }
 
   getAnswers(): void {
-    this.answers = this.crudService.getAnswers(this.categoryId, this.questionId);
+    this.answers = this.answerService.getAnswers(this.categoryId, this.questionId);
   }
 
   updateAnswer(): void {
@@ -56,7 +57,7 @@ export class AnswersComponent implements OnInit {
       return;
     }
 
-    this.crudService.
+    this.answerService.
         getAnswer(this.categoryId, this.questionId,
                   this.currentAnswerId).text = this.editAnswerText;
   }
@@ -94,7 +95,9 @@ export class AnswersComponent implements OnInit {
 
   }
 
-  constructor(private crudService: CrudService,
+  constructor(private answerService: AnswerService,
+              private questionService: QuestionService,
+              private categoryService: CategoryService,
               private route: ActivatedRoute,
               private location: Location,
               private matDialog: MatDialog) { }
@@ -103,8 +106,8 @@ export class AnswersComponent implements OnInit {
     this.category = this.route.snapshot.paramMap.get('category');
     this.questionId = +this.route.snapshot.paramMap.get('questionID');
     console.log(this.category, this.questionId);
-    this.categoryId = this.crudService.getCategoryId(this.category);
-    this.question = this.crudService.getQuestionText(this.categoryId, this.questionId);
+    this.categoryId = this.categoryService.getCategoryId(this.category);
+    this.question = this.questionService.getQuestionText(this.categoryId, this.questionId);
     this.getAnswers();
   }
 

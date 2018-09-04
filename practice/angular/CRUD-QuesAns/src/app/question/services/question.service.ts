@@ -1,25 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Category} from './category';
-import {CATEGORIES} from './mock-categories';
-import {Question} from './question';
-import {QUESTIONS} from './mock-questions';
-import {Answer} from './answer';
-import {ANSWERS} from './mock-answers';
+import { Question } from '../question';
+import { QUESTIONS } from '../mock-questions';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CrudService {
-
-  getCategories(): Category[] {
-    return CATEGORIES;
-  }
-
-  getAnswers(categoryId, questionId): Answer[] {
-    return ANSWERS.filter(obj => {
-      return obj.categoryId === categoryId && obj.questionId === questionId;
-    });
-  }
+export class QuestionService {
 
   getQuestions(categoryId): Question[] {
     return QUESTIONS.filter(obj => {
@@ -33,13 +19,6 @@ export class CrudService {
     })[0];
 
     return question.description;
-  }
-
-  getCategoryId(categoryTitle): number {
-    const category = CATEGORIES.filter(function (e) {
-      return e.title === categoryTitle;
-    });
-    return category[0].id;
   }
 
   incLikes(questionId, categoryId): void {
@@ -75,31 +54,5 @@ export class CrudService {
     QUESTIONS.push(question);
   }
 
-  updateAnswers(answer): void {
-    ANSWERS.push(answer);
-  }
-
-  updateCategory(category): void {
-    if (category !== undefined && category !== null) {
-      CATEGORIES.push(category);
-    }
-  }
-
-  getAnswer(categoryId, questionId, answerId): Answer {
-    return ANSWERS.filter(obj => {
-      return obj.categoryId === categoryId &&
-              obj.questionId === questionId &&
-              obj.id === answerId;
-    })[0];
-  }
-
-  getCategoryTitles(): string {
-    let ret = '';
-    CATEGORIES.forEach( (elem) => {
-      ret += (elem.title + ' ');
-    });
-
-    return ret;
-  }
   constructor() { }
 }

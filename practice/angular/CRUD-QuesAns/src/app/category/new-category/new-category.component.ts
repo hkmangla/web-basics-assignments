@@ -1,19 +1,18 @@
-import {Component, Inject, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, Inject, OnInit } from '@angular/core';
 import {Category} from '../category';
-import {CrudService} from '../crud.service';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import {CategoryService} from '../services/category.service';
 
 @Component({
   selector: 'app-new-category',
   templateUrl: './new-category.component.html',
   styleUrls: ['./new-category.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class NewCategoryComponent implements OnInit {
 
   newTag = '';
   category: Category = {
-      id: this.crudService.getCategories().length + 1,
+      id: this.categoryService.getCategories().length + 1,
       title: '',
       iconUrl: '',
       description: '',
@@ -34,6 +33,7 @@ export class NewCategoryComponent implements OnInit {
     this.dialogRef.close();
   }
   onSubmit(): void {
+    this.category.title = this.category.title.toLowerCase();
     console.log(JSON.stringify(this.category));
     this.dialogRef.close(this.category);
   }
@@ -42,7 +42,7 @@ export class NewCategoryComponent implements OnInit {
     this.category.tags.splice(this.category.tags.indexOf(tag), 1);
   }
 
-  constructor(private crudService: CrudService,
+  constructor(private categoryService: CategoryService,
               private dialogRef: MatDialogRef<NewCategoryComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) {
     this.forbiddenNames = data;
