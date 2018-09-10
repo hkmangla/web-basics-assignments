@@ -1,8 +1,7 @@
-<h1 mat-dialog-title>Warning!</h1>
-<mat-dialog-content>
-  <h3>Are you sure want to delete the Question?</h3>
-</mat-dialog-content>
-<mat-dialog-actions class="action">
-  <button (click)="delete()">Yes</button>
-  <button class="no" (click)="cancel()">No</button>
-</mat-dialog-actions>
+<div class="container">
+  <h4>Are you sure want to delete the Question?</h4>
+  <div class="action">
+    <button class="btn btn-primary" (click)="delete()">Yes</button>
+    <button class="btn" (click)="cancel()">No</button>
+  </div>
+</div>

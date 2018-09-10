@@ -67,8 +67,6 @@ export class AnswersComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.hasBackdrop = true;
-    dialogConfig.width = '400px';
-    dialogConfig.height = '250px';
     dialogConfig.data = answerText;
 
     const dialogRef = this.matDialog.open(EditAnswerComponent, dialogConfig);
@@ -83,9 +81,6 @@ export class AnswersComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.hasBackdrop = true;
-    dialogConfig.width = '400px';
-    dialogConfig.height = '250px';
-
     const dialogRef = this.matDialog.open(NewAnswerComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(
       answerText => this.answerText = answerText,

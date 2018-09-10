@@ -1,9 +1,11 @@
-<p>Categories</p>
 
 <div class="container">
+
+  <p>Categories</p>
+
   <div *ngFor="let category of categories">
 
-    <div class="well">
+    <div routerLink="{{category.title | lowercase}}" class="well">
 
       <div class="row">
         <div class="col-sm-2">
@@ -12,8 +14,7 @@
         </div>
 
         <div class="col-sm-10">
-          <h3><a routerLink="{{category.title | lowercase}}">
-            {{category.title | capitalize}}</a></h3>
+          <h3>{{category.title | capitalize}}</h3>
           <p>{{category.description}}</p>
           <ul class="tags">
             <li *ngFor="let tag of category.tags">{{tag}}</li>

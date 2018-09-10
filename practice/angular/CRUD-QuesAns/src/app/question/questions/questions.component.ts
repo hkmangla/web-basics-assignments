@@ -48,8 +48,6 @@ export class QuestionsComponent implements OnInit {
 
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.width = '400px';
-    dialogConfig.height = '200px';
     dialogConfig.hasBackdrop = true;
     dialogConfig.data = {
       message: '',
@@ -81,8 +79,6 @@ export class QuestionsComponent implements OnInit {
   openDialog(): void {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.width = '360px';
-    dialogConfig.height = '250px';
     dialogConfig.hasBackdrop = true;
 
     const dialogRef = this.matDialog.open(NewQuestionComponent, dialogConfig);

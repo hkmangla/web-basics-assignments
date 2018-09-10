@@ -8,11 +8,23 @@
   height: 20px;
   line-height: 20px;
 }
-
+.status-bar img:hover {
+  transform: scale(1.2, 1.2);
+}
 .description {
   color: dodgerblue;
   font-weight: bold;
 }
 .question-section {
   margin-top: 20px;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.container {
+  padding-top: 130px;
+  margin-bottom: 30px;
 }

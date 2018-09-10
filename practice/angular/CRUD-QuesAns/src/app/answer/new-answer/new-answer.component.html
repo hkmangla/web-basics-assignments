@@ -1,12 +1,16 @@
-<h1 mat-dialog-title>New Answer</h1>
+<div class="container">
+  <h2>New Answer</h2>
 
-<mat-dialog-content>
+  <div>
 
-  <textarea cols="41" rows="4" [(ngModel)]="newAnswerText"></textarea>
+    <div class="form-group">
+      <textarea class="form-control" rows="4" [(ngModel)]="newAnswerText"></textarea>
+    </div>
+    <div>
+      <button class="btn btn-primary" (click)="save()">Add</button>
+      <button class="btn" (click)="cancel()">Cancel</button>
+    </div>
 
-</mat-dialog-content>
+  </div>
 
-<mat-dialog-actions class="action">
-  <button (click)="save()">Add</button>
-  <button class="cancel" (click)="cancel()">Cancel</button>
-</mat-dialog-actions>
+</div>

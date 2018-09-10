@@ -1,12 +1,16 @@
-<p><a class="prev-link" routerLink="/categories">Categories >></a>
-  {{category | capitalize}}</p>
 <div class="container">
+  <p><a class="prev-link" routerLink="/categories">Categories >></a>
+    {{category | capitalize}}</p>
+
   <h3>Learn About: {{category | capitalize}}</h3>
   <button class="btn btn-primary"
     (click)="openDialog()">New Question</button>
+  <div class="message" *ngIf="!questions.length">
+    Category doesn't contain any question!
+  </div>
   <div class="question-section">
-    <div class="well" *ngFor="let question of questions; let i=index">
-      <div *ngIf="question.exists">
+    <div *ngFor="let question of questions; let i=index">
+      <div class="well" *ngIf="question.exists">
         <a routerLink="questions/{{question.id}}">
           <p class="description">{{question.description}}</p>
         </a>
